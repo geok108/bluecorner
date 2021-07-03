@@ -4,7 +4,7 @@
             News
         </h1>
         <div v-for="post in posts" v-bind:key="post.url">
-            <a :href="post.url">{{post.title}}</a><br/>           
+            <a :href="post.url">{{post.title}}</a><br/> 
         </div>
     </div>
 </template>
