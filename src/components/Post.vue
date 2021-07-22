@@ -1,13 +1,16 @@
 <template>
-    <div>
-        <div v-for="post in posts" v-bind:key="post.url">
-            <a :href="post.url">{{post.title}}</a><br/> 
+    <b-list-group-item :href="url" class="flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+             <h5 class="mb-1">{{title}}</h5>
+            <small>{{publishDatetime}}</small>
         </div>
-    </div>
+         <br/>
+      
+    </b-list-group-item>       
 </template>
 <script>
-import Vue from 'vue'
 
 export default {
+    props : ['url', 'title', 'publishDatetime']
 }
 </script>
