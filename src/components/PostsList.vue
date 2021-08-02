@@ -1,13 +1,17 @@
 <template>
-    <div>
-        <h1>
-            News
-        </h1>
-        <b-list-group v-for="post in posts" v-bind:key="post.url" class="col-md-6">
-            <Post :url=post.url :title=post.title :publishDatetime=post.publishDatetime></Post>
-        </b-list-group>
-        <a class="twitter-timeline" href="https://twitter.com/TwitterDev/lists/national-parks?ref_src=twsrc%5Etfw">A Twitter List by TwitterDev</a> 
-    </div>
+ 
+        <b-container>
+            <b-row>
+        <b-col cols="8">
+                <b-list-group v-for="post in posts" v-bind:key="post.url">
+                <Post :url=post.url :title=post.title :publishDatetime=post.publishDatetime :image=post.image></Post>
+                </b-list-group>
+        </b-col>
+        <b-col>
+            <a class="twitter-timeline" href="https://twitter.com/geok108/lists/1421396067636105218" data-width="1000" data-height="600">A Twitter List by TwitterDev</a> 
+        </b-col>
+        </b-row>
+        </b-container>
 </template>
 <script>
 import Vue from 'vue'
