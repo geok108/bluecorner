@@ -4,11 +4,11 @@
             <b-row>
         <b-col cols="8">
                 <b-list-group v-for="post in posts" v-bind:key="post.url">
-                <Post :url=post.url :title=post.title :publishDatetime=post.publishDatetime :image=post.image></Post>
+                <Post :url=post.url :title=post.title :publishDatetime=post.publishDatetime :image=post.image :source=post.source></Post>
                 </b-list-group>
         </b-col>
         <b-col>
-            <a class="twitter-timeline" href="https://twitter.com/geok108/lists/1421396067636105218" data-width="1000" data-height="600">A Twitter List by TwitterDev</a> 
+            <a class="twitter-timeline" href="https://twitter.com/geok108/lists/1421396067636105218" data-width="1000" data-height="1200">A Twitter List by TwitterDev</a> 
         </b-col>
         </b-row>
         </b-container>
@@ -22,8 +22,11 @@ import Post from "./Post.vue"
 Vue.use(VueAxios,axios)
 export default {
     data(){
-        return {posts: null}
-    },
+        return { loadMore: true,
+                    page: 1,
+                    pageSize: 9,
+                    posts: null}
+                  },
     name: "PostsList",
     mounted(){
         Vue.axios.get("http://localhost:8080/posts/list")

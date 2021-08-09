@@ -1,18 +1,22 @@
 <template>
-    <b-list-group-item :href="url" class="flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-         <b-img :src=image height="100px" width="250px"></b-img>
-
-             <h5 class="mb-1">{{title}}</h5>
-            <small>{{publishDatetime}}</small>
+    <div class="list-group list-group-item-action border-bottom">
+        <a :href="url" class="list-group-item-action">
+         <!-- <b-img :src=image height="100px" width="250px"></b-img> -->
+<br/>
+             <h3 class="text-lg-left font-weight-bold">{{title}}</h3>
+             
+        </a>
+            
+        <div class="d-flex justify-content-end">
+            <div class="p-2 font-weight-bold">{{source}}</div>
+            <div class="p-2 text-muted">{{publishDatetime}}</div>
         </div>
-         <br/>
-      
-    </b-list-group-item>       
+
+    </div> 
 </template>
 <script>
 
 export default {
-    props : ['url', 'title', 'publishDatetime', 'image']
+    props : ['url', 'title', 'publishDatetime', 'image', 'source']
 }
 </script>
