@@ -44,7 +44,9 @@ export default {
                     console.log('POSTS:',this.posts);
                     console.log(resp.data);
             });
+            this.forceRerender();
         },
+        forceRerender(){},
         scroll () {
             window.onscroll = () => {
                 let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
@@ -58,7 +60,7 @@ export default {
     name: "PostsList",
     mounted(){
         this.loadMore();
-        this.timer = setInterval(this.loadMore, 60000);
+        this.timer = setInterval(this.loadMore, 10000);
         this.scroll();
         let recaptchaScript = document.createElement('script')
           recaptchaScript.setAttribute('src', 'https://platform.twitter.com/widgets.js')
