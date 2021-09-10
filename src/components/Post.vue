@@ -1,5 +1,5 @@
 <template>
-    <a :href="url" class="list-group-item-action">
+    <!-- <a :href="url" class="list-group-item-action">
         <b-row>
             <b-col cols="4">
                 <b-img :src=image style="object-fit:cover;
@@ -7,19 +7,37 @@
                     height:100px;"></b-img>
             </b-col>
             <b-col>
-                <h5 class="text-lg-left font-weight-bold">{{title}}</h5>                                               
-                <div class="d-flex justify-content-end" style="font-size:0.75rem;">
-                    <div class="p-2 font-weight-bold">{{source}}</div>
-                    <div class="p-2 text-muted">{{publishDatetime}}</div>
-                </div>
+                <h3 class="text-lg-left font-weight-bold">{{title}}</h3>                                               
+                   
+            <b-row align-h="start">
+                <b-col cols="4"><h5>{{source}}</h5></b-col>
+                <b-col cols="4"><h6>{{publishDatetime}}</h6></b-col>                   
+            </b-row> 
             </b-col>
         </b-row>
+      
         <hr/>
-    </a>
+    </a> -->
+
+     
+    <!-- Post preview-->
+    <div class="post-preview">
+        <a :href="url">
+            <h2 class="post-title">{{title}}</h2>
+            <!-- <h3 class="post-subtitle">{{description}}</h3> -->
+
+        </a>
+        <p class="post-meta">
+            
+            <a href="#!">{{source}}</a>
+            | {{publishDatetime}}
+        </p>
+    </div>
+                
 </template>
 <script>
 
 export default {
-    props : ['url', 'title', 'publishDatetime', 'image', 'source']
+    props : ['url', 'title', 'description', 'publishDatetime', 'image', 'source']
 }
 </script>

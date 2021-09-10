@@ -1,20 +1,18 @@
 <template>
- 
-        <b-container>
-            <b-row>
-        <b-col cols="7">
-             <b-list-group v-for="post in posts" v-bind:key="post.url">
-                <Post :url=post.url :title=post.title :publishDatetime=post.publishDatetime :image=post.image :source=post.source></Post>
-            </b-list-group>
-           
-            
-        </b-col>
-        <b-col>
-            <a class="twitter-timeline" href="https://twitter.com/geok108/lists/1421396067636105218" data-width="1000" data-height="1200">A Twitter List by TwitterDev</a> 
-        </b-col>
-        </b-row>
-        </b-container>
-        
+      <div class="container">
+            <div class="row gx-4 gx-lg-5 justify-content-center" style="text-align: left; margin-right:-20%;">
+                <div class="col-md-10 col-lg-10 col-xl-10">
+    <b-list-group v-for="post in posts" v-bind:key="post.url">
+    
+        <!-- Post preview-->
+        <Post :url=post.url :title=post.title :description=post.description :publishDatetime=post.publishDatetime :image=post.image :source=post.source></Post>
+        <!-- Divider-->
+        <hr class="my-4" />
+
+    </b-list-group>
+         </div>
+            </div>
+      </div>
 </template>
 <script>
 import Vue from 'vue'
@@ -44,12 +42,12 @@ export default {
                     console.log('POSTS:',this.posts);
                     console.log(resp.data);
             });
-            this.forceRerender();
+         
         },
         forceRerender(){},
         scroll () {
             window.onscroll = () => {
-                let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+                let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight  === document.documentElement.offsetHeight
 
                 if (bottomOfWindow) {
                     this.loadMore();

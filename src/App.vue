@@ -1,42 +1,36 @@
 <template>
   <div id="app">
-    <b-container>
-  <div>
-  <b-navbar type="dark" variant="dark">
-    <b-navbar-nav>
-      <b-nav-item href="#">Home</b-nav-item>
-
-      <!-- Navbar dropdowns -->
-      <!-- <b-nav-item-dropdown text="Lang" right>
-        <b-dropdown-item href="#">EN</b-dropdown-item>
-        <b-dropdown-item href="#">ES</b-dropdown-item>
-        <b-dropdown-item href="#">RU</b-dropdown-item>
-        <b-dropdown-item href="#">FA</b-dropdown-item>
-      </b-nav-item-dropdown>
-
-      <b-nav-item-dropdown text="User" right>
-        <b-dropdown-item href="#">Account</b-dropdown-item>
-        <b-dropdown-item href="#">Settings</b-dropdown-item>
-      </b-nav-item-dropdown> -->
-    </b-navbar-nav>
-  </b-navbar>
-</div>
-    </b-container>
-    <br/>
+  
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <PostsList/>
+          <!-- <MainMenu/> -->
+          <b-container>
+          <b-row>
+          <b-col cols="8">
+          <PostsList/>
+          </b-col>
+          <b-col>
+          <TwitterFeed/>
+          </b-col>
+          </b-row>
+          </b-container>s
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
+  
 </template>
 
 <script>
 import PostsList from "./components/PostsList.vue"
+// import MainMenu from "./components/MainMenu.vue"
+import TwitterFeed from "./components/TwitterFeed.vue"
+
 // import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
+    TwitterFeed,
+    // MainMenu,
     PostsList
   }
 }
