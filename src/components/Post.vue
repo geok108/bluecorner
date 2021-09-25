@@ -28,8 +28,9 @@
 
         </a>
         <p class="post-meta">
-            
-            <a href="#!">{{source}}</a>
+            <a :href="sourceUrl">
+                <b-img :src="sourceLogo" width="50px"/>
+            </a>
             | {{publishDatetime}}
         </p>
     </div>
@@ -38,6 +39,6 @@
 <script>
 
 export default {
-    props : ['url', 'title', 'description', 'publishDatetime', 'image', 'source']
+    props : ['url', 'title', 'description', 'publishDatetime', 'image', 'source', 'sourceUrl', 'sourceLogo']
 }
 </script>
