@@ -3,16 +3,16 @@
   
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
           <MainMenu/>
-          <b-container style="margin-top: 86px;">
-          <b-row>
-          <b-col cols="8">
+          <div class="container" style="margin-top: 86px;">
+          <div class="row">
+          <div class="col-md-8">
           <PostsList/>
-          </b-col>
-          <b-col>
+          </div>
+          <div class="col-md-4">
           <TwitterFeed/>
-          </b-col>
-          </b-row>
-          </b-container>
+          </div>
+          </div>
+          </div>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
   
