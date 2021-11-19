@@ -22,23 +22,21 @@
      
     <!-- Post preview-->
     <div class="post-preview">
-        <a :href="url">
-            <h2 class="post-title">{{title}}</h2>
-            <!-- <h3 class="post-subtitle">{{description}}</h3> -->
+        <router-link :to="{path:slug}">
 
-        </a>
-        <p class="post-meta">
-            <a :href="sourceUrl">
+            <h2 class="post-title">{{title}}</h2>
+         <!-- <h3 class="post-subtitle">{{description}}</h3> -->
+        </router-link>
+
+        <p class="post-meta" style="font-size: 0.75rem;font-style: italic;">
                 <b-img :src="sourceLogo" width="50px"/>
-            </a>
-            | {{publishDatetime}}
+            {{publishDatetime}}
         </p>
     </div>
                 
 </template>
 <script>
-
 export default {
-    props : ['url', 'title', 'description', 'publishDatetime', 'image', 'source', 'sourceUrl', 'sourceLogo']
+    props : ['url', 'title', 'description', 'publishDatetime', 'image', 'source', 'sourceUrl', 'sourceLogo', 'slug'],
 }
 </script>

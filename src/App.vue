@@ -1,38 +1,34 @@
 <template>
   <div id="app">
-  
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-          <MainMenu/>
-          <div class="container" style="margin-top: 86px;">
-          <div class="row">
+      <MainMenu/>
+      <div class="container" style="margin-top: 86px;">
+        <div class="row">
           <div class="col-md-8">
-          <PostsList/>
+            <router-view></router-view>   
           </div>
           <div class="col-md-4">
-          <TwitterFeed/>
+            <TwitterFeed/>
           </div>
-          </div>
-          </div>
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+        </div>
+     </div>
   </div>
-  
 </template>
 
 <script>
-import PostsList from "./components/PostsList.vue"
 import MainMenu from "./components/MainMenu.vue"
 import TwitterFeed from "./components/TwitterFeed.vue"
-
-// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
-    TwitterFeed,
     MainMenu,
-    PostsList
-  }
+    TwitterFeed,
+  },
+   mounted(){
+        let recaptchaScript = document.createElement('script')
+          recaptchaScript.setAttribute('src', 'https://platform.twitter.com/widgets.js')
+          document.head.appendChild(recaptchaScript)
+    },
 }
 </script>
 

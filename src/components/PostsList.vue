@@ -5,7 +5,7 @@
         <b-list-group v-for="post in posts" v-bind:key="post.url">
         
             <!-- Post preview-->
-            <Post :url=post.url :title=post.title :description=post.description :publishDatetime=post.publishDatetime :image=post.image :source=post.source :sourceUrl=post.sourceUrl :sourceLogo=post.sourceLogo></Post>
+            <Post :url=post.url :title=post.title :description=post.description :publishDatetime=post.publishDatetime :image=post.image :source=post.source :sourceUrl=post.sourceUrl :sourceLogo=post.sourceLogo :slug=post.slug></Post>
             <!-- Divider-->
             <hr class="my-4" />
 
@@ -63,9 +63,6 @@ export default {
         this.loadMore();
         this.timer = setInterval(this.refresh(), 5000);
         this.scroll();
-        let recaptchaScript = document.createElement('script')
-          recaptchaScript.setAttribute('src', 'https://platform.twitter.com/widgets.js')
-          document.head.appendChild(recaptchaScript)
     },
     components: {Post}
 }
