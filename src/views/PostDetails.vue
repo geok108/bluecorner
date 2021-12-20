@@ -1,6 +1,10 @@
 <template>
-<div>
-    <h1>{{post.title}}</h1>
+<div style="text-align:left;">
+        <h1>{{post.title}}</h1>
+
+    <p class="post-meta" style="font-size: 0.75rem;"> 
+         <b-img :src="post.sourceLogo" width="50px"/>
+    {{post.publishDatetime}}</p>
     <div v-html=post.description>
     </div>
      </div>

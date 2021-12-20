@@ -20,6 +20,9 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Post from "./Post.vue"
 
+window.setTimeout(function () {
+  window.location.reload();
+}, 60000);
 Vue.use(VueAxios,axios)
 export default {
     data(){
@@ -46,22 +49,20 @@ export default {
         },
         scroll () {
             window.onscroll = () => {
-                let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight + 10  === document.documentElement.offsetHeight + 10
-
+                let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight;
                 if (bottomOfWindow) {
                     this.loadMore();
                 }
             }
         },
         refresh () {
-            this.forceRerender();
+            location.reload();
         },
-        forceRerender(){}
     },
     name: "PostsList",
     mounted(){
         this.loadMore();
-        this.timer = setInterval(this.refresh(), 5000);
+        // this.timer = setInterval(this.refresh(), 50000);
         this.scroll();
     },
     components: {Post}
