@@ -27,7 +27,7 @@ Vue.use(VueAxios,axios)
 export default {
     data(){
         return { 
-                page: 1,
+                page: 0,
                 pageSize: 9,
                 posts: []
             }
