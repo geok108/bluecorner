@@ -34,7 +34,7 @@ export default {
         },
     methods:{
         loadMore(){
-            Vue.axios.get("http://localhost:8080/posts/list", {
+            Vue.axios.get("http://localhost:8080/posts/list/", {
                 params: {
                     page: this.page++,
                     perpage: this.pageSize,
@@ -44,7 +44,9 @@ export default {
                     this.posts.push(...resp.data.postList);
                     console.log('POSTS:',this.posts);
                     console.log(resp.data);
-            });
+            }).catch((e) => {
+            console.log("ERROR:"+e);
+        });
          
         },
         scroll () {
