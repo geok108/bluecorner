@@ -34,7 +34,7 @@ export default {
         },
     methods:{
         loadMore(){
-            Vue.axios.get("http://localhost:8080/posts/list/", {
+            Vue.axios.get("http://localhost:5000/posts/list/", {
                 params: {
                     page: this.page++,
                     perpage: this.pageSize,

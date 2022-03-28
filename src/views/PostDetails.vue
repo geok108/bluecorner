@@ -23,7 +23,8 @@ export default {
         this.post = {};
         console.log("loading post..");
         let postId = this.$route.params.slug;
-        Vue.axios.get("http://localhost:8080/posts/" + postId, {
+        const apiUrl = "http://localhost:5000/posts/";
+        Vue.axios.get(apiUrl + postId, {
             })  
             .then((resp)=>{
                 this.post=resp.data.post;
