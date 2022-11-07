@@ -23,7 +23,7 @@ export default {
         this.post = {};
         console.log("loading post..");
         let postId = this.$route.params.slug;
-        const apiUrl = "http://localhost:5000/posts/";
+        const apiUrl = process.env.VUE_APP_CAGENEWSAPI + "/posts/";
         Vue.axios.get(apiUrl + postId, {
             })  
             .then((resp)=>{

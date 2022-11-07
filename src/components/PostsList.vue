@@ -20,9 +20,6 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Post from "./Post.vue"
 
-window.setTimeout(function () {
-  window.location.reload();
-}, 60000);
 Vue.use(VueAxios,axios)
 export default {
     data(){
@@ -33,8 +30,24 @@ export default {
             }
         },
     methods:{
+        loadData(){
+            console.log("api url: "+process.env.VUE_APP_CAGENEWSAPI);
+            Vue.axios.get(process.env.VUE_APP_CAGENEWSAPI + "/posts/list/", {
+                params: {
+                }
+                })  
+                .then((resp)=>{
+                    this.posts.push(...resp.data.postList);
+                    console.log('POSTS:',this.posts);
+                    console.log(resp.data);
+            }).catch((e) => {
+            console.log("ERROR:"+e);
+        });
+         
+        },
         loadMore(){
-            Vue.axios.get("http://localhost:5000/posts/list/", {
+            console.log("api url: "+process.env.VUE_APP_CAGENEWSAPI);
+            Vue.axios.get(process.env.VUE_APP_CAGENEWSAPI + "/posts/list/", {
                 params: {
                     page: this.page++,
                     perpage: this.pageSize,
@@ -56,14 +69,25 @@ export default {
                     this.loadMore();
                 }
             }
+
+            window.ontouchmove = () => {
+                let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight;
+                if (bottomOfWindow) {
+                    this.loadMore();
+                }
+            }
         },
-        refresh () {
-            location.reload();
-        },
+        
     },
     name: "PostsList",
     mounted(){
-        this.loadMore();
+        let isMobDevice = (/iphone|ipad|Android|webOS|iPod|BlackBerry|Windows Phone|ZuneWP7/gi).test(navigator.appVersion);
+        if(isMobDevice){
+            this.loadData();
+        }else{
+            this.loadMore();
+        }
+
         // this.timer = setInterval(this.refresh(), 50000);
         this.scroll();
     },

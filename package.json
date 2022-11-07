@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --openssl-legacy-provider",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -20,8 +20,8 @@
     "vue-router": "^3.5.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.15",
-    "@vue/cli-service": "~4.5.15",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "sass-loader": "^12.4.0",
     "vue-template-compiler": "^2.6.14"
   },

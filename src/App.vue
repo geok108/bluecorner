@@ -6,12 +6,12 @@
           <div class="col-md-8">
             <router-view></router-view>   
           </div>
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <TwitterFeed/>
-          </div>
+          </div> -->
         </div>
      </div>
-     <footer class="border-top">
+     <!-- <footer class="border-top">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -45,26 +45,26 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> -->
   </div>
 </template>
 
 <script>
 import MainMenu from "./components/MainMenu.vue"
-import TwitterFeed from "./components/TwitterFeed.vue"
+// import TwitterFeed from "./components/TwitterFeed.vue"
 
 export default {
   name: 'App',
   components: {
     MainMenu,
-    TwitterFeed,
+    // TwitterFeed,
   },
-   mounted(){
-        let recaptchaScript = document.createElement('script')
-          recaptchaScript.setAttribute('src', 'https://platform.twitter.com/widgets.js')
-          document.head.appendChild(recaptchaScript)
+//    mounted(){
+//         let recaptchaScript = document.createElement('script')
+//           recaptchaScript.setAttribute('src', 'https://platform.twitter.com/widgets.js')
+//           document.head.appendChild(recaptchaScript)
 
-    },
+//     },
 }
         //   $('.timeline-Header').remove();
 
