@@ -21,17 +21,28 @@
 
      
     <!-- Post preview-->
-    <div class="post-preview">
-        <router-link :to="{path:slug}">
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <router-link :to="{path:slug}">
 
+            <b-img :src=image style="object-fit:cover;
+                    width:10rem;
+                    height:5rem;"></b-img>
+            </router-link>
+
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 post-preview">
+            <router-link :to="{path:slug}">
             <h2 class="post-title">{{title}}</h2>
-         <!-- <h3 class="post-subtitle">{{description}}</h3> -->
         </router-link>
-
         <p class="post-meta" style="font-size: 0.75rem;font-style: italic;">
                 <b-img :src="sourceLogo" width="50px"/>
             {{publishDatetime}}
         </p>
+        </div>
+         <!-- <h3 class="post-subtitle">{{description}}</h3> -->
+
+       
     </div>
                 
 </template>

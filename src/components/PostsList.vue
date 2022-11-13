@@ -32,7 +32,7 @@ export default {
     methods:{
         loadData(){
             console.log("api url: "+process.env.VUE_APP_CAGENEWSAPI);
-            Vue.axios.get(process.env.VUE_APP_CAGENEWSAPI + "/posts/list/", {
+            Vue.axios.get(process.env.VUE_APP_CAGENEWSAPI + "/posts/list/all", {
                 params: {
                 }
                 })  
@@ -82,6 +82,7 @@ export default {
     name: "PostsList",
     mounted(){
         let isMobDevice = (/iphone|ipad|Android|webOS|iPod|BlackBerry|Windows Phone|ZuneWP7/gi).test(navigator.appVersion);
+       
         if(isMobDevice){
             this.loadData();
         }else{

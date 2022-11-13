@@ -17,7 +17,7 @@ const routes = [
   { name: "PostDetails", path: '/:slug', component: PostDetails, props:true}
 ];
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   routes
 })
 new Vue({
