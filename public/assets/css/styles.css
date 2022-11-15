@@ -11213,7 +11213,7 @@ header.masthead .site-heading .h1 {
   color: #0085A1;
 }
 .post-preview > a > .post-title {
-  font-size: 1.875rem;
+  font-size: 1.875vh;
   margin-bottom: 0.625rem;
   font-weight:bold;
 }
@@ -11233,6 +11233,11 @@ header.masthead .site-heading .h1 {
 @media (min-width: 992px) {
   .post-preview > a > .post-title {
     font-size: 1.5rem;
+  }
+
+  .post-img-size {
+    width: 10rem!important;
+    height: 5rem!important;
   }
 }
 
