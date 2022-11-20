@@ -22,16 +22,16 @@
      
     <!-- Post preview-->
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-4">
+        <div class="col-lg-3 col-md-3 col-5">
             <router-link :to="{path:slug}">
 
             <b-img class="post-img-size" :src=image style="object-fit:cover;
-                    width:17vh;
-                    height:11vh;"></b-img>
+                    width:14vh;
+                    height:9vh;"></b-img>
             </router-link>
 
         </div>
-        <div class="col-lg-9 col-md-9 col-8 post-preview">
+        <div class="col-lg-9 col-md-9 col-7 post-preview">
             <router-link :to="{path:slug}">
             <h2 class="post-title">{{title}}</h2>
         </router-link>

@@ -10,6 +10,11 @@
             <hr class="my-4" />
 
         </b-list-group>
+        <!-- <button id="loadMoreBtn" style="display:none;" @click="loadMore">Load More</button> -->
+        <div style="text-align-last:center;">
+            <b-button pill variant="outline-secondary" id="loadMoreBtn" style="display:none;" @click="loadMore">Load More</b-button>
+        </div>
+        <br>
          </div>
             </div>
       </div>
@@ -30,7 +35,7 @@ export default {
             }
         },
     methods:{
-        loadData(){
+        loadAll(){
             console.log("api url: "+process.env.VUE_APP_CAGENEWSAPI);
             Vue.axios.get(process.env.VUE_APP_CAGENEWSAPI + "/posts/list/all", {
                 params: {
@@ -55,8 +60,8 @@ export default {
                 })  
                 .then((resp)=>{
                     this.posts.push(...resp.data.postList);
-                    console.log('POSTS:',this.posts);
-                    console.log(resp.data);
+                    // console.log('POSTS:',this.posts);
+                    // console.log(resp.data);
             }).catch((e) => {
             console.log("ERROR:"+e);
         });
@@ -82,9 +87,10 @@ export default {
     name: "PostsList",
     mounted(){
         let isMobDevice = (/iphone|ipad|Android|webOS|iPod|BlackBerry|Windows Phone|ZuneWP7/gi).test(navigator.appVersion);
-       
         if(isMobDevice){
-            this.loadData();
+            this.loadMore();
+            const elem = document.getElementById('loadMoreBtn');
+            elem.style.display = "unset";
         }else{
             this.loadMore();
         }
